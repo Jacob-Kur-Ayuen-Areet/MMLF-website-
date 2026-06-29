@@ -1,4 +1,4 @@
-# Makuei Mabior Lueth Foundation (MMLF) Website
+# Micheal Makuei Lueth Foundation (MMLF) Website
 
 Welcome to the repository for the MMLF Website. This project is structured as a modern web application, divided into a frontend React interface and a powerful backend Laravel API with an administrative panel.
 
