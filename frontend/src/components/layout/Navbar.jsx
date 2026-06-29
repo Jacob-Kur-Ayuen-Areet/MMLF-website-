@@ -50,8 +50,8 @@ export default function Navbar() {
               alt="Michael Makuei Lueth Foundation Logo" 
               className="h-10 w-10 md:h-12 md:w-12 object-contain group-hover:scale-105 transition-transform duration-300" 
             />
-            <div className="text-white font-display font-bold text-sm md:text-base leading-tight hidden sm:block">
-              Michael Makuei Lueth<br />Foundation
+            <div className="text-white font-display font-bold text-xs sm:text-sm md:text-base leading-tight">
+              Michael Makuei Lueth<br /><span className="text-primary-400">Foundation</span>
             </div>
           </Link>
 
