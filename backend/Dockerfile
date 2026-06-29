@@ -1,17 +1,19 @@
 FROM php:8.2-apache
 
-# Install system dependencies and PHP extensions required by Laravel
+# Install system dependencies and PHP extensions required by Laravel and Filament
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     libzip-dev \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libicu-dev \
     zip \
     unzip \
     git \
     curl \
-    && docker-php-ext-install pdo pdo_pgsql pdo_mysql mbstring exif pcntl bcmath gd zip
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install pdo pdo_pgsql pdo_mysql mbstring exif pcntl bcmath gd zip intl
 
 # Enable Apache mod_rewrite (required for Laravel routing)
 RUN a2enmod rewrite
