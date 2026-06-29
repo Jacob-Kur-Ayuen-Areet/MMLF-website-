@@ -44,17 +44,14 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-white rounded-full p-0.5 shadow-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-110 shrink-0">
-              <img
-                src="/logo.png"
-                alt="MMLF Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div>
-              <div className="text-white font-display font-bold text-base leading-tight">MMLF</div>
-              <div className="text-secondary-400 text-xs leading-tight hidden sm:block">Empowering Communities</div>
+          <Link to="/" className="flex items-center gap-3 md:gap-4 shrink-0 group">
+            <img 
+              src="/logo.png" 
+              alt="Michael Makuei Lueth Foundation Logo" 
+              className="h-10 w-10 md:h-12 md:w-12 object-contain group-hover:scale-105 transition-transform duration-300" 
+            />
+            <div className="text-white font-display font-bold text-sm md:text-base leading-tight hidden sm:block">
+              Michael Makuei Lueth<br />Foundation
             </div>
           </Link>
 
