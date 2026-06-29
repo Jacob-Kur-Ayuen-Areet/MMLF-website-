@@ -35,11 +35,11 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 # Set permissions for Laravel to be able to write to storage and cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Install PHP dependencies for production
-RUN composer install --no-dev --optimize-autoloader
+# Install PHP dependencies for production without running scripts
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # Expose the standard web port
 EXPOSE 80
 
-# When the container starts, force database migrations, then start Apache
-CMD php artisan migrate --force && apache2-foreground
+# At startup, run composer scripts, migrate the database, and start Apache
+CMD php artisan package:discover && php artisan filament:upgrade && php artisan config:cache && php artisan route:cache && php artisan migrate --force && apache2-foreground
