@@ -59,8 +59,14 @@ class ContactMessageResource extends Resource
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('email')->searchable(),
                 Tables\Columns\TextColumn::make('subject')->searchable()->limit(50),
-                Tables\Columns\BadgeColumn::make('status')
-                    ->colors(['warning' => 'unread', 'success' => 'read', 'info' => 'replied']),
+                Tables\Columns\TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'unread' => 'warning',
+                        'read' => 'success',
+                        'replied' => 'info',
+                        default => 'gray',
+                    }),
                 Tables\Columns\TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->filters([
