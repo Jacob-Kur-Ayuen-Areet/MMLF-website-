@@ -25,12 +25,20 @@ const heroSlides = [
     badge: "Transforming Lives in South Sudan"
   },
   {
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
+    image: "/m2.jpg",
     title: "Education",
     highlight: "For All,",
     subtitle: "Scholarships for the Future",
     description: "Providing opportunities for the youth of South Sudan to achieve their dreams through higher education and training programs.",
     badge: "Building the Next Generation"
+  },
+  {
+    image: "/M3.jpg",
+    title: "Investing",
+    highlight: "In Our Youth,",
+    subtitle: "Leaders of Tomorrow",
+    description: "The Michael Makuei Lueth Foundation stands alongside every scholar and student, equipping them to become the next generation of South Sudanese leaders.",
+    badge: "Empowering the Next Generation"
   },
   {
     image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=2070&auto=format&fit=crop",
@@ -105,13 +113,14 @@ export default function HomePage() {
           {extendedSlides.map((slide, index) => (
             <div
               key={index}
-              className="w-full h-full flex-shrink-0 relative flex items-center"
+              className="w-full h-full flex-shrink-0 relative flex items-center overflow-hidden"
             >
               <div className="absolute inset-0 bg-black/50 z-10" />
               <img
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-full object-cover absolute inset-0"
+                style={{ animation: 'kenburns 8s ease-out forwards' }}
               />
               
               {/* Content for this slide */}
